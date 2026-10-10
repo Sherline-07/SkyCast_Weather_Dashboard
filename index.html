@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyCast | Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="dashboard">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="SkyCast home"><span class="brand-mark">☼</span> skycast<span class="brand-dot">.</span></a>
+      <span class="live-label"><span class="live-dot"></span> LIVE WEATHER</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">YOUR WEATHER, AT A GLANCE</p>
+      <h1>Forecast for <span>your world.</span></h1>
+      <p class="intro-copy">Find the latest weather conditions for any city.</p>
+    </section>
+
+    <form id="searchForm" class="search-form">
+      <span class="search-icon" aria-hidden="true">⌕</span>
+      <label class="sr-only" for="cityInput">Enter a city</label>
+      <input id="cityInput" type="text" placeholder="Search a city, e.g. Chennai" autocomplete="off" required>
+      <button id="searchButton" type="submit">Search <span aria-hidden="true">→</span></button>
+    </form>
+    <p id="statusMessage" class="status-message" role="status" aria-live="polite">Search for a city to see its current weather.</p>
+
+    <section id="weatherPanel" class="weather-panel" hidden aria-live="polite">
+      <div class="weather-main">
+        <div>
+          <p class="location-label">CURRENT CONDITIONS</p>
+          <h2 id="cityName">Chennai</h2>
+          <p id="weatherDescription" class="weather-description">Partly cloudy</p>
+          <p id="updatedTime" class="updated-time"></p>
+        </div>
+        <div class="weather-illustration" id="weatherIcon" aria-hidden="true">🌤️</div>
+      </div>
+      <div class="temperature-row">
+        <strong id="temperature">--°</strong>
+        <span>°C</span>
+      </div>
+      <p id="feelsLike" class="feels-like"></p>
+      <div class="metrics">
+        <article class="metric-card">
+          <span class="metric-icon">💧</span>
+          <p>Humidity</p>
+          <strong id="humidity">--%</strong>
+        </article>
+        <article class="metric-card">
+          <span class="metric-icon">🌬️</span>
+          <p>Wind speed</p>
+          <strong id="windSpeed">-- km/h</strong>
+        </article>
+        <article class="metric-card">
+          <span class="metric-icon">🌡️</span>
+          <p>Feels like</p>
+          <strong id="feelsMetric">--°C</strong>
+        </article>
+      </div>
+      <p class="weather-note">Weather data provided by Open-Meteo.</p>
+    </section>
+
+    <section class="tips">
+      <div class="tip-symbol">✦</div>
+      <div><h3>A little weather check goes a long way.</h3><p>Plan your day with the latest conditions before you head out.</p></div>
+    </section>
+    <footer>Designed for curious skies <span>✦</span></footer>
+  </main>
+</body>
+</html>
